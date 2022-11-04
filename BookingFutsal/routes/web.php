@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\LapanganController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
+Route::controller(LapanganController::class)->group(function(){
+    Route::get('/jadwal-lapangan', 'jadwal');
+    Route::get('/pesan-lapangan', 'pesanview');
+});
+
+Route::get('/login',[LoginController::class,'index']);

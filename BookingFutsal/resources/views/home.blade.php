@@ -11,22 +11,18 @@
     @vite('resources/css/app.css')
 </head>
 <body class="font-Inter">
-<div class="container mx-auto">
-    <div class="flex h-14 border shadow-lg bg-slate-50 mb-2">
-            <div class="md:hidden">
-                <button type="button" onclick="navbar()"><img src="/img/icons/navbar-mobile.png" alt="navbar" class="w-8 h-8 m-3 hover:w-10 hover:h-10 ease-in duration-200 origin-center"></button>
-            </div>
-            <div class="mx-auto p-3 md:flex">
-                <section class="md:hidden">
-                    <h2>Bantarkawung Futsal Center</h2>
-                </section>
-                <ul class="hidden md:flex md:justify-between md:mx-auto">
-                    <li class="transition md:mx-2 md:hover:text-slate-600 md:hover:text-lg duration-300"><a href="">Home</a></li>
-                    <li class="md:mx-2 md:hover:text-slate-600 md:hover:text-lg"><a href="">Pesan</a></li>
-                    <li class="md:mx-2 md:hover:text-slate-600 md:hover:text-lg"><a href="">Login</a></li>
-                    <li class="md:mx-2 md:hover:text-slate-600 md:hover:text-lg"><a href="">About</a></li>
-                </ul>
-            </div>
+<div class="mx-auto">
+    <div class="h-14 border shadow-lg bg-teal-500 mb-1 grid grid-cols-12 text-white">
+        <div clss="col-start-1" >
+            <img class="w-16 h-10" src="/img/icons/Logo/logo-lap-futsal.png" alt="logo">
+        </div>
+            <div class="col-span-2 col-start-2 m-auto hover:text-slate-200"><a href="/jadwal-lapangan">Jadwal Lapangan</a></div>
+            <div class="col-span-2 col-start-4 m-auto hover:text-slate-200"><a href="/pesan-lapangan">Pesan Lapangan</a></div>
+            <div class="col-start-11 m-auto hover:text-slate-200"><a href="/login">Login <svg class="w-5 inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                <path fill-rule="evenodd" d="M3 4.25A2.25 2.25 0 015.25 2h5.5A2.25 2.25 0 0113 4.25v2a.75.75 0 01-1.5 0v-2a.75.75 0 00-.75-.75h-5.5a.75.75 0 00-.75.75v11.5c0 .414.336.75.75.75h5.5a.75.75 0 00.75-.75v-2a.75.75 0 011.5 0v2A2.25 2.25 0 0110.75 18h-5.5A2.25 2.25 0 013 15.75V4.25z" clip-rule="evenodd" />
+                <path fill-rule="evenodd" d="M6 10a.75.75 0 01.75-.75h9.546l-1.048-.943a.75.75 0 111.004-1.114l2.5 2.25a.75.75 0 010 1.114l-2.5 2.25a.75.75 0 11-1.004-1.114l1.048-.943H6.75A.75.75 0 016 10z" clip-rule="evenodd" />
+              </svg>
+              </a></div>
     </div>
     <div class="container hidden" id="menu-mobile">
         <div class="w-full h-auto bg-slate-400 text-center group">
@@ -35,16 +31,10 @@
             <div class="mb-1"><a href="" class="text-slate-600 hover:text-black">Login</a></div>
         </div>
     </div>
-    <div class="w-full h-[34rem] flex rounded-sm" style="background-image: url(./img/background/lapangan.jpeg)">
-        <div class="w-full h-[10rem] m-auto bg-slate-500/50 text-white">
-            <section class="font-Inter font-semibold text-center text-xl mt-5">
-                <h1>BANTARKAWUNG FUTSAL CENTER</h3>
-            </section>
-            <section class="font-Inter font-semibold text-center text-xl">
-                <h1 class="italic">Tempatnya bermain Futsal dengan nyaman dan menyenangkan</h2>
-            </section>
-            <section class="text-center mt-5">
-                <a href="" class="transition bg-orange-400 w-10 h-4 rounded-lg p-2 shadow-xl hover:bg-yellow-600">Pesan Sekarang</a>
+    <div class="bg-teal-500 rounded-md mx-auto">
+        <div class="w-full h-[34rem] " style="background-image: url('img/background/lapangan.jpeg')">
+            <section>
+                <h1>Test</h1>
             </section>
         </div>
     </div>
