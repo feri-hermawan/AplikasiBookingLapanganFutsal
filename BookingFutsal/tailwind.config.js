@@ -4,7 +4,13 @@ module.exports = {
     "./resources/**/*.blade.php",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors:{
+        primary: '#14b8a6',
+        latarbelakang: '#e5e7eb',
+        footerhalaman: '#64748b'
+      }
+    },
     fontFamily: {
       Inter : ['Inter'],
     },
