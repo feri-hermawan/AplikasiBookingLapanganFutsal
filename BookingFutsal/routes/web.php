@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\LapanganController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\Userprofilecontroller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,3 +26,12 @@ Route::controller(LapanganController::class)->group(function(){
 });
 
 Route::get('/login',[LoginController::class,'index']);
+Route::controller(RegisterController::class)->group(function(){
+    Route::get('/register','index');
+    Route::get('/register/add-picture','AddPict');
+});
+
+Route::controller(Userprofilecontroller::class)->group(function(){
+    Route::get('/profile/view','index');
+    Route::get('/profile/edit','EditProfile');
+});

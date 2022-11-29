@@ -8,7 +8,7 @@ module.exports = {
       colors:{
         primary: '#14b8a6',
         latarbelakang: '#e5e7eb',
-        footerhalaman: '#64748b'
+        footerhalaman: '#64748b',
       }
     },
     fontFamily: {

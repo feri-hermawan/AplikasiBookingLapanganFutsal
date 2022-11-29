@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login</title>
+    <title>{{$title ?? "Feri Futsal Center"}}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;700&display=swap" rel="stylesheet">
@@ -48,8 +48,8 @@
 <div class="block mt-16">
     @yield('konten')
 </div>
-<footer class="bg-footerhalaman mt-[100px] md:mt-4 md:h-full bottom-0 max-h-full pt-[24px] pb-[12px]">
-    <div class="container text-white">
+<footer class="bg-footerhalaman mt-[20px] md:mt-4 md:h-full bottom-0 max-h-full pt-[24px] pb-[12px] flex">
+    <div class="container text-white mx-auto">
         <ul>
             <li>
                 <span class="flex">

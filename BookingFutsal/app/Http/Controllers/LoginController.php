@@ -8,6 +8,8 @@ class LoginController extends Controller
 {
     //Halaman Login index
     public function index(){
-        return view('login.index-login');
+        return view('login.index-login',[
+            "title" => "Login"
+        ]);
     }
 }

@@ -19,3 +19,27 @@
 .humberger-active > span:nth-child(3){
     @apply -rotate-45;
 }
+
+.icons-home{
+    @apply max-w-[55px] max-h-[55px] m-2 hover:scale-125
+}
+
+.input-profile{
+    @apply max-w-[full] bg-transparent;
+}
+
+.login-form{
+    @apply mx-auto block max-w-[250px] mb-3;
+}
+
+.input-form{
+    @apply py-2 px-3 shadow-md md:shadow-lg border-solid border-2 rounded-lg placeholder:italic placeholder:text-slate-400
+}
+
+.btn-primary{
+    @apply bg-blue-500
+}
+
+.konten-layout{
+    @apply container mx-auto bg-white border-solid rounded-xl
+}
