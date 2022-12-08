@@ -5,14 +5,14 @@
             <div class="py-4 px-2 ">
             <form>
                 <div class="font-bold flex mb-5 text-2xl md:text-4xl">
-                    <h1 class="mx-auto">Login</h1>
+                    <h1 class="mx-auto">Masuk</h1>
                 </div>
                 <div class="login-form">
                     <label class="mr-2 font-semibold" for="">Username</label>
                     <input class="input-form" type="text" placeholder="Masukan Username...">
                 </div>
                 <div class="login-form">
-                    <label class="mr-2 font-semibold" for="">Password</label>
+                    <label class="mr-2 font-semibold" for="">Kata sandi</label>
                     <input class="input-form" type="text" placeholder="Masukan Password...">
                 </div>
                 <div class="mx-auto max-w-[250px]">
@@ -23,7 +23,8 @@
                 </div>
                 <div class="mx-auto block max-w-[250px] mt-5 md:mb-[103px]">
                     <span class="italic mx-auto">
-                        <a class="text-blue-700 hover:text-blue-400" href="/register">Buat Akun</a> Atau <a class="text-blue-700 hover:text-blue-400" href="">Reset Password</a>
+                        <a class="text-blue-700 hover:text-blue-400" href="/register">Buat Akun</a> Atau <a class="text-blue-700 hover:text-blue-400" href="/v/reset-password">Reset Kata sandi
+                        </a>
                     </span>
                 </div>
             </form>

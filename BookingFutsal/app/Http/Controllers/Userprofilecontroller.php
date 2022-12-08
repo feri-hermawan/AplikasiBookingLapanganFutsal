@@ -21,4 +21,16 @@ class Userprofilecontroller extends Controller
             "title" => "Edit Profile"
         ]);
     }
+
+    public function ResetPassView(){
+        return view('reset password.reset-pass',[
+            "title" => "Reset Password"
+        ]);
+    }
+
+    public function EditPassword(){
+        return view('reset password.create-new-password',[
+            "title" => "Create New Password"
+        ]);
+    }
 }

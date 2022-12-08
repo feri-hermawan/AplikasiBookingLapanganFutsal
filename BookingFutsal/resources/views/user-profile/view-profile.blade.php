@@ -6,8 +6,7 @@
         </div>
         <div class="mt-8 lg:flex max-w-full ">
             <section id="profile-1" class="lg:ml-10 lg:mr-10">
-                <div class="mx-auto border-2 rounded-full border-slate-400 max-w-[100px] shadow-2xl lg:max-w-[300px]">
-                    <img class="bg-cover rounded-full overflow-hidden" src="/img/profile/default-user/example.jpeg" alt="profile">
+                <div class="mx-auto border-2 bg-cover rounded-full text-center border-slate-400 w-[100px] h-[100px] shadow-2xl lg:w-[200px] lg:h-[200px]" style="background-image: url('/img/profile/default-user/Kobo.jpg');">
                 </div>
                 <div class="text-center mt-2 text-sm font-bold lg:text-xl lg:font-semibold">Feri Hermawan</div>
             </section>
@@ -50,8 +49,8 @@
                 </div>
             </section>
         </div>
-        <section class="block my-3">
-            <div class="bg-yellow-500 max-w-[80px] text-center py-3 px-2 rounded-xl text-white shadow-xl hover:bg-yellow-400 mt-5 lg:ml-[70px]">
+        <section class="my-3 flex lg:flex">
+            <div class="bg-yellow-500 w-[80px] mx-auto text-center py-2 px-1 rounded-xl text-white shadow-xl hover:bg-yellow-400 mt-5 lg:ml-[70px] object-center">
                 <a href="/profile/edit" class="text-lg">Edit</a>
             </div>
         </section>

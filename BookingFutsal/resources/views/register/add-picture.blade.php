@@ -2,7 +2,7 @@
 @section('konten')
     <div class="konten-layout py-3 px-2">
         <div class="text-center">
-            <h2 class="font-semibold text-lg lg:text-2xl">Add Picture Profile</h2>
+            <h2 class="font-semibold text-lg lg:text-2xl">Tambahkan Foto Profile</h2>
         </div>
         <div class="mt-7 mb-5">
             <div class="container bg-slate-400 mx-auto border-black shadow-lg w-[150px] h-[150px] lg:w-[200px] lg:h-[200px] rounded-full flex p-2">
@@ -18,7 +18,7 @@
             <button class="bg-blue-600 py-3 px-2 max-w-[100px] rounded-xl shadow-xl hover:bg-blue-400">Selesai</button>
         </div>
         <div class="text-center text-blue-500 hover:text-blue-300 mt-5 mb-14 lg:mb-5">
-            <a href="">Skip, Add Pict Later</a>
+            <a href="">Lewati, Tambahkan nanti</a>
         </div>
     </div>
 @endsection

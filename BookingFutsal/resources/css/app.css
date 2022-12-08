@@ -43,3 +43,7 @@
 .konten-layout{
     @apply container mx-auto bg-white border-solid rounded-xl
 }
+
+.rotate-icon{
+    @apply rotate-90;
+}
