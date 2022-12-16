@@ -39,7 +39,7 @@
                     </div>
                 </div>
                 <div class="block mt-5 mb-5 lg:ml-1 lg:mt-10">
-                    <div class="btn-primary max-w-[80px] px-2 py-3 rounded-md text-white shadow-lg hover:bg-blue-400 lg:rounded-xl lg:shadow-xl">
+                    <div class="btn-primary max-w-[80px] px-2 py-3 text-center rounded-md text-white shadow-lg hover:bg-blue-400 lg:rounded-xl lg:shadow-xl">
                         <button type="submit">Daftar</button>
                     </div>
                 </div>

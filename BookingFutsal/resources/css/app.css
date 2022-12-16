@@ -47,3 +47,7 @@
 .rotate-icon{
     @apply rotate-90;
 }
+
+.list-pesanan-waktu{
+    @apply h-[100px] overflow-y-scroll
+}

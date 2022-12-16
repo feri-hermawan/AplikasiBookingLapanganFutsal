@@ -15,7 +15,7 @@
         <div class="container">
             <div class="flex items-center justify-between relative">
                 <div class="px-4 mx-2 flex border-4 border-white">
-                    <a href="\">Feri Futsal Center</a>
+                    <a href="\">Bantarkawung Futsal Center</a>
                 </div>
                 <div class="flex px-4 items-center">
                     <button id="humberger" type="button" class="block absolute right-4 lg:hidden">
@@ -85,7 +85,7 @@
                 <span class="flex">
                     <div class="mx-auto flex">
                         <img class="max-h-[20px] max-w-[20px]" src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Copyright_white.svg" alt="CopyRight">
-                        <h5 class="mx-2">2022 - Feri Futsal Center</h5>
+                        <h5 class="mx-2">2022 - Bantarkawung Futsal Center</h5>
                     </div>
                 </span>
             </li>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LapanganController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MailController;
@@ -46,4 +47,11 @@ Route::get('/v/check-email',[MailController::class, 'SendEmailView']);
 Route::controller(AdminController::class)->group(function(){
     Route::get('/admin/dashboard','index');
     Route::get('/admin/profile/view','ProfileView');
+});
+Route::controller(DashboardController::class)->group(function(){
+
+    Route::get('/admin/daftar-pesanan','DaftarPesananView');
+    Route::get('/admin/pesanan/unconfirmed','UnconfirmedView');
+    Route::get('/admin/konfigurasi','KonfigurasiView');
+    Route::get('/admin/daftar-user','DaftarUser');
 });

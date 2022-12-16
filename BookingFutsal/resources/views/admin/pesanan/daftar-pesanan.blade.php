@@ -1,4 +1,4 @@
 @extends('admin.index-dashboard')
 @section('dashboard')
-    <h1>ini halaman profile admin edit</h1>
+    <h1>Ini adalah halaman Daftar Pesanan</h1>
 @endsection
