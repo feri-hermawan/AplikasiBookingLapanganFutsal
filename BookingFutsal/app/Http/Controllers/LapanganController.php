@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LapanganController extends Controller
 {
@@ -15,8 +16,12 @@ class LapanganController extends Controller
 
     //Halaman view Pesan Lapangan
     public function pesanview(){
-        return view('pesan-lapangan',[
-            "title" => "Pesan Lapangan"
-        ]);
+        if(Auth::check()){
+            return view('pesan-lapangan',[
+                "title" => "Pesan Lapangan"
+            ]);
+        }
+
+        return back();
     }
 }

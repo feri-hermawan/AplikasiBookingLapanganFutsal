@@ -11,14 +11,18 @@
                 </div>
             </div>
         </div>
+        <form action="/register/add-picture" method="post" enctype="multipart/form-data">
+            @csrf
         <div class="mx-auto bg-slate-300 w-[250px] lg:w-[300px] p-3 rounded-full mt-5">
-            <input id="input-file" type="file" class="text-sm text-slate-400 file:text-violet-600 file:rounded-full file:border-0 file:text-sm file:bg-violet-50 file:font-semibold file:py-2 file:px-3 file:mr-4">
+            <input type="text" name="user_id" id="user_id" value="{{$idUser}}" hidden>
+            <input id="input-file" type="file" name="image" class="text-sm text-slate-400 file:text-violet-600 file:rounded-full file:border-0 file:text-sm file:bg-violet-50 file:font-semibold file:py-2 file:px-3 file:mr-4">
         </div>
         <div id="complete-btn" class="text-center text-white font-semibold my-5">
             <button class="bg-blue-600 py-3 px-2 max-w-[100px] rounded-xl shadow-xl hover:bg-blue-400">Selesai</button>
         </div>
+        </form>
         <div class="text-center text-blue-500 hover:text-blue-300 mt-5 mb-14 lg:mb-5">
-            <a href="">Lewati, Tambahkan nanti</a>
+            <a href="/register/add-pict/skip/{{$idUser}}">Lewati, Tambahkan nanti</a>
         </div>
     </div>
 @endsection

@@ -6,13 +6,14 @@
         </div>
         <div>
             <div class="mt-6 lg:mt-10 lg:ml-20">
-                <form>
+                <form action="/profile/update" method="post" enctype="multipart/form-data">
+                    @csrf
                     <div class="block">
                         <div class="ml-2 mb-1 mt-3">
-                            <div class="w-[100px] h-[100px] rounded-xl shadow-lg bg-cover" style="background-image: url('/img/profile/default-user/Kobo.jpg');">
+                            <div class="w-[100px] h-[100px] rounded-xl shadow-lg bg-cover" style="background-image: url('{{asset('storage/'.$data->bio->image)}}');">
                             </div>
                             <div>
-                                <input type="file" class="text-sm text-slate-600 file:text-sm file:rounded-lg file:border-0 file:bg-primary file:text-white">
+                                <input type="file" name="image" class="text-sm text-slate-600 file:text-sm file:rounded-lg file:border-0 file:bg-primary file:text-white" value="{{$data->bio->image}}">
                             </div> 
                         </div>
                     </div>
@@ -21,7 +22,7 @@
                             <label for="">Nama </label>
                         </div>
                         <div class="lg:max-w-[450px]">
-                            <input class="input-form lg:w-full" type="text" value="Feri Hermawan">
+                            <input class="input-form lg:w-full" name="name" type="text" value="{{$data->name}}">
                         </div>
                     </div>
                     <div class="block">
@@ -29,7 +30,7 @@
                             <label for="">Email </label>
                         </div>
                         <div class="lg:max-w-[450px]">
-                            <input class="input-form lg:w-full" type="email" value="ferihermawan@gmail.com">
+                            <input class="input-form lg:w-full" name="email" type="email" value="{{$data->email}}">
                         </div>
                     </div>
                     <div class="block">
@@ -37,7 +38,7 @@
                             <label for="">Alamat </label>
                         </div>
                         <div class="lg:max-w-[450px]">
-                            <input class="input-form lg:w-full" type="text" value="jl.prapatan Bantarkawung RT 02/01">
+                            <input class="input-form lg:w-full" name="alamat" type="text" value="{{$data->bio->alamat}}">
                         </div>
                     </div>
                     <div class="block">
@@ -45,7 +46,7 @@
                             <label for="">No HP / Whatsapp </label>
                         </div>
                         <div class="lg:max-w-[450px]">
-                            <input class="input-form lg:w-full" type="number" value="085157132366">
+                            <input class="input-form lg:w-full" name="telepon" type="number" value="{{$data->bio->telepon}}">
                         </div>
                     </div>
                     <div class="block">

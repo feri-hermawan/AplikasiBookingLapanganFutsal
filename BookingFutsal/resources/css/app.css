@@ -51,3 +51,11 @@
 .list-pesanan-waktu{
     @apply h-[100px] overflow-y-scroll
 }
+
+.konten-layout-admin{
+    @apply bg-white border-[1px] rounded-lg border-slate-400 shadow-xl  px-10 py-10
+}
+
+.border-line{
+    @apply border px-3 py-2
+}

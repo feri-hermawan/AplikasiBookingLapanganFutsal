@@ -28,20 +28,29 @@ Route::controller(LapanganController::class)->group(function(){
     Route::get('/pesan-lapangan', 'pesanview');
 });
 
-Route::get('/login',[LoginController::class,'index']);
-Route::controller(RegisterController::class)->group(function(){
-    Route::get('/register','index');
-    Route::get('/register/add-picture','AddPict');
+Route::controller(LoginController::class)->group(function(){
+    Route::get('/login', 'index')->middleware('guest');
+    Route::post('/login','Authenticate')->middleware('guest');
+    Route::post('/logout','Logout')->middleware('auth');
 });
 
-Route::controller(Userprofilecontroller::class)->group(function(){
-    Route::get('/profile/view','index');
-    Route::get('/profile/edit','EditProfile');
+Route::controller(RegisterController::class)->middleware('guest')->group(function(){
+    Route::get('/register','index');
+    Route::post('/register/create','RegisterUser');
+    Route::get('/register/add-picture/view/{id}','AddPict');
+    Route::post('/register/add-picture','UploadImg');
+    Route::get('/register/add-pict/skip/{id}','UploadImgDefault');
+});
+
+Route::controller(Userprofilecontroller::class)->middleware('auth')->group(function(){
+    Route::get('/profile/view/{id}','index');
+    Route::get('/profile/edit/{id}','EditProfile');
+    Route::post('/profile/update','UpdateProfile');
     Route::get('/v/reset-password','ResetPassView');
     Route::get('/e/new-password','EditPassword');
 });
 
-Route::get('/v/check-email',[MailController::class, 'SendEmailView']);
+Route::get('/v/check-email',[MailController::class, 'SendEmailView'])->middleware('auth');
 
 /* ==================== Route Halama Admin ================================== */
 Route::controller(AdminController::class)->group(function(){

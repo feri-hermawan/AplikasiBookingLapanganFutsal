@@ -36,14 +36,27 @@
                         <li class="group">
                             <a href="/pesan-lapangan" class=" group-hover:text-slate-200 mx-8 py-2 flex">Pesan Lapangan</a>
                         </li>
+                        @auth                            
+                        <li class="group">
+                            <a href="/profile/view/{{auth()->user()->id}}" class=" group-hover:text-slate-200 mx-8 py-2 flex">Profile</a>
+                        </li>
+                        <li class="group">
+                            <form action="/logout" method="post">
+                                @csrf
+                                <button class="group-hover:text-slate-200 mx-8 py-2 flex" type="submit">Logout</button>
+                            </form>
+                        </li>
+                        @endauth
+                        @guest
                         <li class="group">
                             <a href="/login" class=" group-hover:text-slate-200 mx-8 py-2 flex">Login</a>
                         </li>
+                        @endguest
                     </ul>
                 </nav>
-            </div>
         </div>
     </header>
+
 
 <div class="block mt-16">
     @yield('konten')

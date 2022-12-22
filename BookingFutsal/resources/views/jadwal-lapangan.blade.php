@@ -23,39 +23,39 @@
         <div class="mt-10 mb-[90px] lg:w-[900px] bg-yellow-500 lg:mx-auto">
             <div class="bg-primary">
             <table class="table-auto border-slate-600 text-center w-full text-white">
-                <thead class="border px-3 py-2 bg-slate-700 ">
+                <thead class="border-line bg-slate-700 ">
                     <tr>
-                        <td class="border px-3 py-2">Nama</td>
-                        <td class="border px-3 py-2">Waktu</td>
-                        <td class="border px-3 py-2">Durasi</td>
+                        <td class="border-line">Nama</td>
+                        <td class="border-line">Waktu</td>
+                        <td class="border-line">Durasi</td>
                     </tr>
                 </thead>
                 <tbody class="">
-                    {{-- <tr>
-                        <th class="border px-3 py-2">Feri Hermawan</th>
-                        <th class="border px-3 py-2">12.00</th>
-                        <th class="border px-3 py-2">3 Jam</th>
+                    <tr>
+                        <th class="border-line">Feri Hermawan</th>
+                        <th class="border-line">12.00</th>
+                        <th class="border-line">3 Jam</th>
                     </tr>
                     <tr>
-                        <th class="border px-3 py-2">Idris Nabawi</th>
-                        <th class="border px-3 py-2">14.00</th>
-                        <th class="border px-3 py-2">2 Jam</th>
+                        <th class="border-line">Idris Nabawi</th>
+                        <th class="border-line">14.00</th>
+                        <th class="border-line">2 Jam</th>
                     </tr>
                     <tr>
-                        <th class="border px-3 py-2">Idris Nabawi</th>
-                        <th class="border px-3 py-2">14.00</th>
-                        <th class="border px-3 py-2">2 Jam</th>
+                        <th class="border-line">Idris Nabawi</th>
+                        <th class="border-line">14.00</th>
+                        <th class="border-line">2 Jam</th>
                     </tr>
                     <tr>
-                        <th class="border px-3 py-2">Idris Nabawi</th>
-                        <th class="border px-3 py-2">14.00</th>
-                        <th class="border px-3 py-2">2 Jam</th>
+                        <th class="border-line">Idris Nabawi</th>
+                        <th class="border-line">14.00</th>
+                        <th class="border-line">2 Jam</th>
                     </tr>
                     <tr>
-                        <th class="border px-3 py-2">Idris Nabawi</th>
-                        <th class="border px-3 py-2">14.00</th>
-                        <th class="border px-3 py-2">2 Jam</th>
-                    </tr> --}}
+                        <th class="border-line">Idris Nabawi</th>
+                        <th class="border-line">14.00</th>
+                        <th class="border-line">2 Jam</th>
+                    </tr>
                 </tbody>
             </table>
             </div>

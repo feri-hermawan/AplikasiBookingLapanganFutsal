@@ -5,37 +5,46 @@
             <h3 class="font-semibold text-lg lg:text-2xl">DAFTAR</h3>
         </div>
         <div class="mt-6 lg:mt-10 lg:ml-20">
-            <form>
+            <form action="/register/create" method="post">
+                @csrf
                 <div class="block">
                     <div class="ml-2 mb-1 mt-3">
-                        <label for="">Nama <span class="text-red-500">*</span></label>
+                        <label>Nama <span class="text-red-500">*</span></label>
                     </div>
                     <div class="lg:max-w-[450px]">
-                        <input class="input-form lg:w-full" type="text" placeholder="Masukan nama lengkap">
+                        <input class="input-form lg:w-full" type="text" name="name" placeholder="Masukan nama lengkap">
                     </div>
                 </div>
                 <div class="block">
                     <div class="ml-2 mb-1 mt-3">
-                        <label for="">Email <span class="text-red-500">*</span></label>
+                        <label>Tanggal Lahir <span class="text-red-500">*</span></label>
                     </div>
                     <div class="lg:max-w-[450px]">
-                        <input class="input-form lg:w-full" type="email" placeholder="Masukan email">
+                        <input class="input-form lg:w-full" type="date" name="lahir" data-date-inline-picker="true">
                     </div>
                 </div>
                 <div class="block">
                     <div class="ml-2 mb-1 mt-3">
-                        <label for="">No HP / Whatsapp <span class="text-red-500">*</span></label>
+                        <label>Email <span class="text-red-500">*</span></label>
                     </div>
                     <div class="lg:max-w-[450px]">
-                        <input class="input-form lg:w-full" type="number" placeholder="Masukan No Hp / WA">
+                        <input class="input-form lg:w-full" name="email" type="email" placeholder="Masukan email">
                     </div>
                 </div>
                 <div class="block">
                     <div class="ml-2 mb-1 mt-3">
-                        <label for="">Kata sandi <span class="text-red-500">*</span></label>
+                        <label>No HP / Whatsapp <span class="text-red-500">*</span></label>
                     </div>
                     <div class="lg:max-w-[450px]">
-                        <input class="input-form lg:w-full" type="password">
+                        <input class="input-form lg:w-full" name="telepon" type="number" placeholder="Masukan No Hp / WA">
+                    </div>
+                </div>
+                <div class="block">
+                    <div class="ml-2 mb-1 mt-3">
+                        <label>Kata sandi <span class="text-red-500">*</span></label>
+                    </div>
+                    <div class="lg:max-w-[450px]">
+                        <input class="input-form lg:w-full" name="password" type="password">
                     </div>
                 </div>
                 <div class="block mt-5 mb-5 lg:ml-1 lg:mt-10">
@@ -43,7 +52,6 @@
                         <button type="submit">Daftar</button>
                     </div>
                 </div>
-                
             </form>
         </div>
     </div>

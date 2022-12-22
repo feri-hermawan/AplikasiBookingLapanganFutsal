@@ -81,7 +81,7 @@
         </div>
         <div class="col-span-6 bg-latarbelakang">
             <div class="container px-[50px] py-[50px]">
-                <div class="bg-white">
+                <div class="">
                     @yield('dashboard')
                 </div>
             </div>
