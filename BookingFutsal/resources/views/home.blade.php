@@ -20,4 +20,9 @@
             </div>
         </div>
     </div>
+@if(session()->has('loginBerhasil'))
+<script>
+    swal("Berhasil Login", "{{session('loginBerhasil') ." ". auth()->user()->name}}", "success");
+</script>
+@endif
 @endsection

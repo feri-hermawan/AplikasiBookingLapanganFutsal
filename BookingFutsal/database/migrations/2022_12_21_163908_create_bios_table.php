@@ -19,7 +19,7 @@ return new class extends Migration
             $table->date('lahir');
             $table->text('alamat')->nullable();
             $table->string('telepon');
-            $table->string('image')->nullable();
+            $table->string('image')->default('default');
             $table->timestamps();
         });
     }

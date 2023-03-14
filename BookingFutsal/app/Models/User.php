@@ -47,4 +47,8 @@ class User extends Authenticatable
     public function bio(){
         return $this->hasOne(Bio::class, 'user_id');
     }
+
+    public function pesanan(){
+        return $this->hasMany(Pesanan::class, 'user_id');
+    }
 }

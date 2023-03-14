@@ -29,8 +29,8 @@ class RegisterController extends Controller
         $validateData = $req->validate([
             "name"=> 'required',
             "lahir" => 'required',
-            "email"=> 'required',
-            "telepon" => 'required',
+            "email"=> 'required|email:dns',
+            "telepon" => 'required|digits:12',
             "password" => 'required'
         ]);
         
@@ -51,12 +51,13 @@ class RegisterController extends Controller
             'telepon' => $validateData['telepon'],
         ]);
 
-        return redirect('/register/add-picture/view/'.$user['id']);
+        return redirect('/register/add-picture/view/'.$user['id'])->with('daftarBerhasil','Selamat Akun anda berhasil di buat');
     }
 
    
     public function UploadImg(Request $req){
 
+        $req->validate(["image" => 'file|image|max:1024']);
         $image = $req->file('image')->store('profile-image');
         Bio::where('user_id', $req['user_id'])->update([
             'image' => $image

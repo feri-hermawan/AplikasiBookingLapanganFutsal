@@ -50,11 +50,8 @@
                         </div>
                     </div>
                     <div class="block">
-                        <div class="ml-2 mb-1 mt-3">
-                            <label for="">Password <span class="text-red-500">*</span><p class="italic text-[9px]">jika tidak ingin mengganti password, maka kosongkan saja</p></label>
-                        </div>
-                        <div class="lg:max-w-[450px]">
-                            <input class="input-form lg:w-full" type="password">
+                        <div class="ml-2 mb-1 mt-10">
+                            <a href="/edit/change-password/view/{{auth()->user()->id}}" class="bg-blue-400 text-white py-1 px-2 rounded-lg hover:bg-blue-200 shadow-xl">Ubah Password</a>
                         </div>
                     </div>
                     <div class="flex mt-5 mb-5 lg:ml-1 lg:mt-10">
@@ -62,7 +59,7 @@
                             <button type="submit">Save</button>
                         </div>
                         <div class="bg-red-500 w-[80px] ml-[5px] text-center px-1 py-2 rounded-md text-white shadow-lg hover:bg-red-400 lg:rounded-xl lg:shadow-xl">
-                            <a href="/profile/view">Cancel</button>
+                            <a href="/profile/view/{{auth()->user()->id }}">Cancel</button>
                         </div>
                     </div>
                     

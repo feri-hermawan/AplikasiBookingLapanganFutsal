@@ -13,10 +13,16 @@
         </div>
         <form action="/register/add-picture" method="post" enctype="multipart/form-data">
             @csrf
+            
         <div class="mx-auto bg-slate-300 w-[250px] lg:w-[300px] p-3 rounded-full mt-5">
             <input type="text" name="user_id" id="user_id" value="{{$idUser}}" hidden>
             <input id="input-file" type="file" name="image" class="text-sm text-slate-400 file:text-violet-600 file:rounded-full file:border-0 file:text-sm file:bg-violet-50 file:font-semibold file:py-2 file:px-3 file:mr-4">
         </div>
+        @error('image')
+        <div class="flex mt-1">
+            <div class="mx-auto italic text-sm text-red-400 font-normal">{{$message . ' Try Again'}}</div>
+        </div>
+        @enderror
         <div id="complete-btn" class="text-center text-white font-semibold my-5">
             <button class="bg-blue-600 py-3 px-2 max-w-[100px] rounded-xl shadow-xl hover:bg-blue-400">Selesai</button>
         </div>
@@ -25,4 +31,10 @@
             <a href="/register/add-pict/skip/{{$idUser}}">Lewati, Tambahkan nanti</a>
         </div>
     </div>
+
+    @if (session()->has('daftarBerhasil'))
+    <script>
+        swal("Daftar Berhasil", "{{session('daftarBerhasil')}}", "success");
+    </script>    
+    @endif
 @endsection

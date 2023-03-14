@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{$title ?? "Feri Futsal Center"}}</title>
+    <title>{{$title ?? "Bantarkawung Futsal Center"}}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;700&display=swap" rel="stylesheet">
     @vite('resources/css/app.css')
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="./TW-ELEMENTS-PATH/dist/js/index.min.js"></script>
 </head>
 <body class="font-Inter bg-latarbelakang">
     <header class="bg-primary absolute top-0 left-0  w-full max-h-[40px] lg:max-h-[55px] h-full flex items-center z-10 text-white">
@@ -33,10 +35,10 @@
                         <li class="group">
                             <a href="/jadwal-lapangan" class=" group-hover:text-slate-200 mx-8 py-2 flex">Jadwal Lapangan</a>
                         </li>
+                        @auth
                         <li class="group">
-                            <a href="/pesan-lapangan" class=" group-hover:text-slate-200 mx-8 py-2 flex">Pesan Lapangan</a>
-                        </li>
-                        @auth                            
+                            <a href="/pesan-lapangan/view/{{auth()->user()->id}}" class=" group-hover:text-slate-200 mx-8 py-2 flex">Pesan Lapangan</a>
+                        </li>                            
                         <li class="group">
                             <a href="/profile/view/{{auth()->user()->id}}" class=" group-hover:text-slate-200 mx-8 py-2 flex">Profile</a>
                         </li>
@@ -105,6 +107,8 @@
         </ul>
     </div>
 </footer>
+
     <script src="/Javascript/cssJavascript.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 </html>

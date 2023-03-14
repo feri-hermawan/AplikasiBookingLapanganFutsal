@@ -16,22 +16,30 @@ class LoginController extends Controller
 
     public function Authenticate(Request $req){
         $validasi = $req->validate([
-            'email' => 'required',
+            'email' => 'required|email:dns',
             'password' => 'required'
         ]);
 
         if(Auth::attempt($validasi)){
             $req->session()->regenerate();
 
-            return redirect()->intended('/');
+            if(auth()->user()->role == '1')
+            {
+                return redirect()->intended('/admin/profile/view');
+            }
+            else
+            {
+                return redirect()->intended('/')->with('loginBerhasil','Selamat Datang');
+            }
         }
 
-        return back();
+        return back()->with('loginfailed','Username atau Password yang di masukan salah !');
     }
 
     public function Logout(Request $req){
 
         Auth::logout();
+        
         $req->session()->invalidate();
         $req->session()->regenerateToken();
 

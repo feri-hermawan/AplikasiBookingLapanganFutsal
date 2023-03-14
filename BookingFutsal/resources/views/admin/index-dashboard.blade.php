@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;700&display=swap" rel="stylesheet">
     @vite('resources/css/app.css')
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body class="font-Inter bg-latarbelakang">
     <div class="grid grid-cols-7">
@@ -39,7 +40,7 @@
                 </div>
                 <div id="pesanan-list" class="text-[13px] font-normal hidden">
                     <div class="ml-6 hover:text-white/40 mt-2">
-                        <a href="/admin/pesanan/unconfirmed" >Belum terkonfirmasi</a>
+                        <a href="/admin/pesanan/pesanan-masuk" >Pesanan Masuk</a>
                     </div>
                     <div class="ml-6 hover:text-white/40 mt-2">
                         <a href="/admin/daftar-pesanan">Daftar Pesanan</a>
@@ -67,14 +68,17 @@
                 </div>
             </div>
             <div class="group my-[50px]">
+                <form action="/logout" method="POST">
+                    @csrf
                 <div class=" group-hover:text-white/40">
-                    <a class="flex" href="">
+                    <button class="flex" type="submit">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
                           </svg>
                           <p>Logout</p>
-                    </a>
+                    </button>
                 </div>
+                </form>
             </div>
             </div>
 

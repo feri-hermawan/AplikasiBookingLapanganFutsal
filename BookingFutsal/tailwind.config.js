@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./resources/**/*.blade.php",
+    "./resources/**/*.blade.php", './src/**/*.{html,js}', './node_modules/tw-elements/dist/js/**/*.js',
   ],
   theme: {
     extend: {
@@ -15,5 +15,7 @@ module.exports = {
       Inter : ['Inter'],
     },
   },
-  plugins: [],
+  plugins: [
+    require('tw-elements/dist/plugin')
+  ],
 }

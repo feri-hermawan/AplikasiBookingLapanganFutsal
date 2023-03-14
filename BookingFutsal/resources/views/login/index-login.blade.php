@@ -1,5 +1,6 @@
 @extends('layouts.main')
 @section('konten')
+
     <div class="container mx-auto flex mb-[100px] lg:mb-[20px]">
         <div class="mx-auto border-solid bg-white mt-[100px] md:mt-2 rounded-xl shadow-xl md:w-full">
             <div class="py-4 px-2 ">
@@ -32,4 +33,10 @@
             </div>
         </div>
     </div>
+    @if(session()->has('loginfailed'))
+    <script>
+        swal("Login Gagal", "{{session('loginfailed')}}", "error");
+    </script>
+    @endif
+
 @endsection

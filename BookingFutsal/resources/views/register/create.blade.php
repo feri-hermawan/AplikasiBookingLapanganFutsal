@@ -12,7 +12,8 @@
                         <label>Nama <span class="text-red-500">*</span></label>
                     </div>
                     <div class="lg:max-w-[450px]">
-                        <input class="input-form lg:w-full" type="text" name="name" placeholder="Masukan nama lengkap">
+                        @error('name')<span class="text-sm text-red-400 italic font-normal">Nama tidak Valid</span>@enderror
+                        <input class="input-form lg:w-full @error('name') border-red-400 @enderror" type="text" name="name" placeholder="Masukan nama lengkap" value="{{old('name')}}">
                     </div>
                 </div>
                 <div class="block">
@@ -28,7 +29,8 @@
                         <label>Email <span class="text-red-500">*</span></label>
                     </div>
                     <div class="lg:max-w-[450px]">
-                        <input class="input-form lg:w-full" name="email" type="email" placeholder="Masukan email">
+                        @error('telepon')<span class="text-sm text-red-400 italic font-normal">Email yang anda masukan tidak valid</span>@enderror
+                        <input class="input-form lg:w-full @error('email') border-red-400 @enderror" name="email" type="email" placeholder="Masukan email" value="{{old('email')}}">
                     </div>
                 </div>
                 <div class="block">
@@ -36,7 +38,8 @@
                         <label>No HP / Whatsapp <span class="text-red-500">*</span></label>
                     </div>
                     <div class="lg:max-w-[450px]">
-                        <input class="input-form lg:w-full" name="telepon" type="number" placeholder="Masukan No Hp / WA">
+                        @error('telepon')<span class="text-sm text-red-400 italic font-normal">Nomor Telepon Harus 12 Digit</span>@enderror
+                        <input class="input-form lg:w-full @error('telepon') border-red-400 @enderror" name="telepon" type="number" placeholder="Masukan No Hp / WA" value="{{old('telepon')}}">
                     </div>
                 </div>
                 <div class="block">

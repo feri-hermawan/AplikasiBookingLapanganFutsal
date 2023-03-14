@@ -1,5 +1,5 @@
 @php
- if($data->bio->image == 'default'){
+ if($data->bio->image == 'default' || $data->bio->image == null){
     $image = '/img/profile/default-user/default.png';
     }
 else {
@@ -15,7 +15,7 @@ else {
         </div>
         <div class="mt-8 lg:flex">
             <section id="profile-1" class="lg:ml-10 lg:mr-10">
-                <div class="mx-auto border-2 bg-cover rounded-full text-center border-slate-400 w-[100px] h-[100px] shadow-2xl lg:w-[200px] lg:h-[200px]" style="background-image: url('{{$image}}');">
+                <div class="mx-auto border-2 bg-cover rounded-lg text-center border-slate-400 w-[100px] h-[100px] shadow-2xl lg:w-[200px] lg:h-[200px]" style="background-image: url('{{$image}}');">
                 </div>
                 <div class="text-center mt-2 text-sm font-bold lg:text-xl lg:font-semibold">{{$data->name}}</div>
             </section>
@@ -39,7 +39,7 @@ else {
                         <li>
                             <div class="text-lg lg:text-2xl lg:mb-3">
                                 <label class="font-semibold">Tanggal Lahir : </label>
-                                <label class="font-medium">16 Januari 2000</label>
+                                <label class="font-medium">{{$data->bio->lahir}}</label>
                             </div>
                         </li>
                         <li>

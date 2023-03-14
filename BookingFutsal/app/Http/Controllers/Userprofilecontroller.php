@@ -6,26 +6,35 @@ use App\Models\Bio;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Carbon\Carbon;
 
 class Userprofilecontroller extends Controller
 {
-    /*Masuk kehalaman index profile,
-    bisa untuk melihat profile user, dan mengedit data informasi tentang user tersebut
-    */
+
+
+    /* fungsi mengecek, jika poto di ganti akan di update dengan baru (dan hapus data yg di storage), jika tidak, akan pake poto yang lama */
+    public function MengecekFotoProfile($userBio, $req)
+    {
+        if($userBio->image and $req->image != null){
+            Storage::delete($userBio->image);
+            return $req->file('image')->store('profile-image');
+        }
+        return $userBio->image;
+    }
+
+
     public function index($id)
     {
         $data = User::where('id', $id)->with('bio')->first();
-
         return view('user-profile.view-profile',[
             "title" => "Profile",
-            "data" => $data
+            "data" => $data,
 
         ]);
     }
 
     public function EditProfile($id){
         $data = User::where('id',$id)->with('bio')->first();
-
         if(auth()->user()->id == $id){
             return view('user-profile.edit-profile',[
                 "title" => "Edit Profile",
@@ -37,36 +46,29 @@ class Userprofilecontroller extends Controller
     }
 
     public function UpdateProfile(Request $req){
-        $user_id = auth()->user()->id;
-        $user = Bio::where('user_id',$user_id)->first();
-
+        $userId = auth()->user()->id;
+        $userBio = Bio::where('user_id',$userId)->first();
 
         $validasi = $req->validate([
             "name" => 'required',
-            "email" => 'required',
-            "telepon" => 'required',
+            "email" => 'required|email:dns',
+            "telepon" => 'required|digits:12',
             'alamat' => 'required',
         ]);
 
-        if($user->image and $req->image != null){
-            Storage::delete($user->image);
-            $image = $req->file('image')->store('profile-image');
-        }
-        else{
-            $image = $user->image;
-        }
-        User::find($user_id)->update([
+        $image = $this->MengecekFotoProfile($userBio, $req);
+        User::find($userId)->update([
             "name" => $validasi['name'],
             "email" => $validasi['email'],
         ]);
 
-        Bio::where('user_id', $user_id)->update([
+        Bio::where('user_id', $userId)->update([
             "alamat" => $validasi['alamat'],
             "telepon" => $validasi['telepon'],
             "image" => $image
         ]);
 
-        return redirect('/profile/view/'.$user_id);
+        return redirect('/profile/view/'.$userId);
     }
 
     public function ResetPassView(){
@@ -75,9 +77,29 @@ class Userprofilecontroller extends Controller
         ]);
     }
 
-    public function EditPassword(){
-        return view('reset password.create-new-password',[
-            "title" => "Create New Password"
-        ]);
+    public function EditPassword($id){
+        if(auth()->user()->id == $id){
+            return view('update password.change-password-view',[
+                "title" => "Ubah Password",
+                "id" => $id
+            ]);
+        }
+        return back();
     }
+
+    public function UpdatePassword(Request $req, $id)
+    {
+        $validate = $req->validate([
+            "password1" => 'required',
+            "password2" => 'required|same:password1'
+        ]);
+
+        $passBaru = bcrypt($validate['password1']);
+        User::find($id)->update([
+            'password'=> $passBaru
+        ]);
+        return redirect('/profile/view/'.$id);
+    }
+
+
 }

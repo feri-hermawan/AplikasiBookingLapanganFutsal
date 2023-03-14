@@ -12,6 +12,7 @@ class Bio extends Model
     protected $fillable = [
         "user_id",
         'lahir',
+        'alamat',
         "telepon",
         "image"
     ];
